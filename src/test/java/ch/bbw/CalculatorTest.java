@@ -20,4 +20,10 @@ public class CalculatorTest {
         assertTrue(testee.summe(10, 25) == 35);
     }
 
+    @Test
+    public void testSubstrTwoPositiiveIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(25, 10) == 15);
+    }
+
 }
