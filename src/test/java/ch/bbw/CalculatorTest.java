@@ -14,6 +14,8 @@ public class CalculatorTest {
 
     Calculator testee;
 
+
+    //8 Tests for testee.summe(value1, value2);
     @Test
     public void testSumTwoPositiveIsOk() {
         testee = new Calculator();
@@ -62,12 +64,57 @@ public class CalculatorTest {
         assertTrue(testee.summe(-1, -2) == -3);
     }
 
+
+    //8 Tests for testee.substraktion(value1, value2);
     @Test
-    public void testSubstrTwoPositiiveIsOk() {
+    public void testSubstrTwoPositiveIsOk() {
         testee = new Calculator();
         assertTrue(testee.substraktion(25, 10) == 15);
     }
 
+    @Test
+    public void testSubstrTwoNegativeIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(-1, -2) == 1);
+    }
+
+    @Test
+    public void testSubstrTwoZeroIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(0, 0) == 0);
+    }
+
+    @Test
+    public void testSubstrZeroMinusPositiveIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(0, 2) == -2);
+    }
+
+    @Test
+    public void testSubstrPositiveMinusZeroIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(9, 0) == 9);
+    }
+
+    @Test
+    public void testSubstrZeroMinusNegativeIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(0, -2) == 2);
+    }
+
+    @Test
+    public void testSubstrNegativeMinusZeroIsOk()  {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(-2, 0) == -2);
+    }
+
+    @Test
+    public void testSubstrPositiveMinusNegativeIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.substraktion(4, -2) == 6);
+    }
+
+    //8 Tests for testee.division(value1, value2);
     @Test(expected = ArithmeticException.class)
     public void testDividedByZeroException() {
         testee = new Calculator();
