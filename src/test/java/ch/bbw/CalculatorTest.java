@@ -129,4 +129,41 @@ public class CalculatorTest {
         testee.division(2, 2);
     }
 
+    @Test
+    public void testDivisionTwoPositiveIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(2, 2) == 1);
+    }
+
+    @Test
+    public void testDivisionTwoNegativeIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(-2, -2) == 1);
+    }
+
+    @Test
+    public void testDivisionNegativeAndPositiveIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(-4, 2) == -2);
+    }
+
+    @Test
+    public void testDivisionPositiveAndNegativeIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(8, -4) == -2);
+    }
+
+    @Test
+    public void testDivisionMaxAndMinIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(Integer.MAX_VALUE, Integer.MIN_VALUE) == 0);
+    }
+
+
+    @Test
+    public void testDivisionZeroAndPositiveIsOk() {
+        testee = new Calculator();
+        assertTrue(testee.division(0, 2) == 0);
+    }
+
 }
